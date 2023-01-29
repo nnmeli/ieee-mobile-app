@@ -7,12 +7,16 @@ class nvg_bar extends StatelessWidget {
   }) : super(key: key);
 
   final ieee_icon = "lib/assets/images/ieee_icon.png" ;
+
   final gtu_icon = "lib/assets/images/gtü_icon.png" ;
+
   final profile_icon = "lib/assets/images/profile1b.png";
+
   final home_icon = "lib/assets/images/home1b.png";
+
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    var height = MediaQuery.of(context).size.height;
     return BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xff00609c),

@@ -13,10 +13,10 @@ class container_tasarim extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double boy= ( MediaQuery.of(context).size.width * 0.4);
-    double ic_boy = ( MediaQuery.of(context).size.width * 0.25);
+    var boy= ( MediaQuery.of(context).size.height * 0.18);
+    var ic_boy = ( MediaQuery.of(context).size.height * 0.11);
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(boy*0.05),
       child: SizedBox(
         width:boy,
         height: boy,
@@ -35,7 +35,7 @@ class container_tasarim extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(boy*0.28),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -46,7 +46,7 @@ class container_tasarim extends StatelessWidget {
                     child: Image.asset(image_adresi)),
                 Text(baslik,style: TextStyle(
                     color: baslik_renk,
-                    fontSize: ic_boy/5,
+                    fontSize: boy*0.14,
                     fontWeight: FontWeight.bold
                 ),)
               ],

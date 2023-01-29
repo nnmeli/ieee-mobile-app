@@ -11,9 +11,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
 //double width = MediaQuery.of(context).size.width;
-//double height = MediaQuery.of(context).size.height;
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,9 +31,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    double sol_bosluk = width * 0.05;
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    var sol_bosluk = width * 0.05;
     final ieee_icon = "lib/assets/images/ieee_icon.png";
     final gtu_icon = "lib/assets/images/gtü_icon.png";
     return SafeArea(
@@ -62,7 +61,7 @@ class Home extends StatelessWidget {
                         child: Text("IEEE GTÜ Mobil Uygulamasına",
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                                fontSize: width / 14, color: Colors.black)),
+                                fontSize: height / 32, color: Colors.black)),
                       ),
                     ),
                   ),
@@ -75,7 +74,7 @@ class Home extends StatelessWidget {
                         child: Text("Hoş Geldin!",
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                                fontSize: width / 8, color: Colors.black ,fontWeight: FontWeight.bold)),
+                                fontSize: height / 18, color: Colors.black ,fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ),
@@ -89,7 +88,7 @@ class Home extends StatelessWidget {
                             "Kampüste neye ihtiyacin varsa , hepsi burada.. ",
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                                fontSize: width / 30, color: Colors.black)),
+                                fontSize: height / 70, color: Colors.black)),
                       ),
                     ),
                   ),
@@ -115,7 +114,7 @@ class Home extends StatelessWidget {
                               "Hızlı Erişim",
                               textAlign: TextAlign.left,
                               style: TextStyle(
-                                  fontSize: width / 12, color: Colors.black),
+                                  fontSize: height / 24, color: Colors.black),
                             ),
                           ),
                         )),
@@ -155,7 +154,7 @@ class Home extends StatelessWidget {
                                 "lib/assets/images/yemekhane4.png",
                                 "Yemekhane"),
                           ],
-                        ),
+                        )
                       ]),
                     ),
                   ],

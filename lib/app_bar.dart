@@ -9,8 +9,8 @@ class app_bar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double bar_height = height/60 ;
+    var height = MediaQuery.of(context).size.height;
+    var bar_height = height/60 ;
     return AppBar(
 
       foregroundColor: Colors.white,
