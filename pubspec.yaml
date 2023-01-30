@@ -29,8 +29,11 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  salomon_bottom_bar: ^3.3.1
+  animated_text_kit: ^4.2.2
   flutter:
     sdk: flutter
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -74,6 +77,20 @@ flutter:
     - lib/assets/images/yemekhane4b.png
     - lib/assets/images/home1b.png
     - lib/assets/images/profile1b.png
+    - lib/assets/images/cs.png
+    - lib/assets/images/comsoc.png
+    - lib/assets/images/eac.png
+    - lib/assets/images/embs.png
+    - lib/assets/images/external.png
+    - lib/assets/images/girisimcilik.png
+    - lib/assets/images/insankaynaklari.png
+    - lib/assets/images/kisiselgelisim.png
+    - lib/assets/images/malzeme.png
+    - lib/assets/images/matematik.png
+    - lib/assets/images/medyavetasarim.png
+    - lib/assets/images/pes.png
+    - lib/assets/images/ras.png
+    - lib/assets/images/wie.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

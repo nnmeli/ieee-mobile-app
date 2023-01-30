@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class container_tasarim extends StatelessWidget {
+class fast_button extends StatelessWidget {
   Color renk1;
   Color renk2;
   Color baslik_renk;
@@ -8,7 +8,7 @@ class container_tasarim extends StatelessWidget {
   String baslik;
 
 
-  container_tasarim(this.renk1, this.renk2, this.baslik_renk, this.image_adresi,
+  fast_button(this.renk1, this.renk2, this.baslik_renk, this.image_adresi,
       this.baslik);
 
   @override
@@ -35,7 +35,7 @@ class container_tasarim extends StatelessWidget {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
-              borderRadius: BorderRadius.circular(boy*0.28),
+              borderRadius: BorderRadius.circular(45),//boy*0.28
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

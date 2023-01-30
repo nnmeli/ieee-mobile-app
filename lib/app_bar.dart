@@ -15,9 +15,9 @@ class app_bar extends StatelessWidget {
 
       foregroundColor: Colors.white,
       bottomOpacity: 0,
-      shape: Border(bottom: BorderSide(color: Color(0xffffffff) , width: 2)),
+
       //elevation: 0,
-      shadowColor: Colors.blue,
+      shadowColor:Color(0xff00609c) ,
       backgroundColor: Colors.white,
       title: Container(  padding: EdgeInsets.fromLTRB(0.0, height/36, 0.0, 0.0),
           child: Image.asset(
@@ -29,7 +29,7 @@ class app_bar extends StatelessWidget {
           builder: (context) {
             return IconButton(padding: EdgeInsets.fromLTRB(0.0, height/36, 0.0, 0.0),
                 icon: Icon(Icons.menu_open_rounded,
-                    color: Colors.blueAccent, size: 30),
+                    color: Color(0xff00609c), size: 30),
                 onPressed: () {
                   Scaffold.of(context).openDrawer();
                 });
