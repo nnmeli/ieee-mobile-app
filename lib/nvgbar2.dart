@@ -30,28 +30,28 @@ class _BottomNavBarState extends State<BottomNavBar> {
         items: [
           /// Home
           SalomonBottomBarItem(
-            icon: Image.asset(home_icon ,  ),
+            icon: Image.asset(home_icon , height: height/36 ),
             title: Text("Ana Sayfa"),
             selectedColor: Colors.white,
           ),
 
           /// Likes
           SalomonBottomBarItem(
-            icon: Image.asset(gtu_icon ,  ),
+            icon: Image.asset(gtu_icon , height: height/36 ),
             title: Text("GTÜ"),
             selectedColor:  Color(0xffF00000),
           ),
 
           /// Search
           SalomonBottomBarItem(
-            icon: Image.asset(ieee_icon ,  ),
+            icon: Image.asset(ieee_icon ,height: height/36  ),
             title: Text("IEEE"),
             selectedColor: Color(0xfff5af19),
           ),
 
           /// Profile
           SalomonBottomBarItem(
-            icon: Image.asset(profile_icon , ),
+            icon: Image.asset(profile_icon , height: height/36),
             title: Text("Profil"),
             selectedColor: Colors.black54,
           ),

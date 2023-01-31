@@ -64,33 +64,33 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/images/ieee_white.png
-    - lib/assets/images/ieee_colored.png
-    - lib/assets/images/ieee_black.png
-    - lib/assets/images/marma2.png
-    - lib/assets/images/marma2b.png
-    - lib/assets/images/gtü_icon.png
-    - lib/assets/images/ieee_icon.png
-    - lib/assets/images/bus2.png
-    - lib/assets/images/bus2b.png
-    - lib/assets/images/yemekhane4.png
-    - lib/assets/images/yemekhane4b.png
-    - lib/assets/images/home1b.png
-    - lib/assets/images/profile1b.png
-    - lib/assets/images/cs.png
-    - lib/assets/images/comsoc.png
-    - lib/assets/images/eac.png
-    - lib/assets/images/embs.png
-    - lib/assets/images/external.png
-    - lib/assets/images/girisimcilik.png
-    - lib/assets/images/insankaynaklari.png
-    - lib/assets/images/kisiselgelisim.png
-    - lib/assets/images/malzeme.png
-    - lib/assets/images/matematik.png
-    - lib/assets/images/medyavetasarim.png
-    - lib/assets/images/pes.png
-    - lib/assets/images/ras.png
-    - lib/assets/images/wie.png
+    - lib/assets/images/
+#    - lib/assets/images/ieee_colored.png
+#    - lib/assets/images/ieee_black.png
+#    - lib/assets/images/marma2.png
+#    - lib/assets/images/marma2b.png
+#    - lib/assets/images/gtü_icon.png
+#    - lib/assets/images/ieee_icon.png
+#    - lib/assets/images/bus2.png
+#    - lib/assets/images/bus2b.png
+#    - lib/assets/images/yemekhane4.png
+#    - lib/assets/images/yemekhane4b.png
+#    - lib/assets/images/home1b.png
+#    - lib/assets/images/profile1b.png
+#    - lib/assets/images/cs.png
+#    - lib/assets/images/comsoc.png
+#    - lib/assets/images/eac.png
+#    - lib/assets/images/embs.png
+#    - lib/assets/images/external.png
+#    - lib/assets/images/girisimcilik.png
+#    - lib/assets/images/insankaynaklari.png
+#    - lib/assets/images/kisiselgelisim.png
+#    - lib/assets/images/malzeme.png
+#    - lib/assets/images/matematik.png
+#    - lib/assets/images/medyavetasarim.png
+#    - lib/assets/images/pes.png
+#    - lib/assets/images/ras.png
+#    - lib/assets/images/wie.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
