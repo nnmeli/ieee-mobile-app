@@ -1,18 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:yasam_app/gridview.dart';
-import "./app_bar.dart";
-import './nvg_bar.dart';
-import './buttons_fast.dart';
-import 'nvgbar2.dart';
+import 'package:ieee_mobile_app/screens/gtu_page.dart';
+import 'package:ieee_mobile_app/screens/marmaray_page.dart';
+import 'package:ieee_mobile_app/screens/profile_page.dart';
+import 'screens/bus_page.dart';
+import 'screens/ieee_gtu_page.dart';
+import 'screens/komiteler_page.dart';
+import 'constants/app_bar.dart';
+import 'constants/nvg_bar.dart';
+import 'constants/buttons_fast.dart';
+import 'constants/nvgbar2.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:ieee_mobile_app/constants/ieee_gtu_menu.dart';
+
+
 
 
 void main() {
-  runApp(const MyApp());
+  runApp(const main_page());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class main_page extends StatelessWidget {
+  const main_page({super.key});
 
 
 //double width = MediaQuery.of(context).size.width;
@@ -39,11 +47,13 @@ var _currentIndex = 0;
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     var sol_bosluk = width * 0.05;
     final ieee_icon = "lib/assets/images/ieee_icon.png";
     final gtu_icon = "lib/assets/images/gtü_icon.png";
+    var _pages = [ Body(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon) , gtu_page(),ieee_gtu_page(),profile_page(),long_menu() ];
 
     return SafeArea(
       child: Scaffold(backgroundColor: Colors.white,
@@ -58,7 +68,8 @@ class _HomeState extends State<Home> {
           //height: height / 12,
          // child: nvg_bar(),
         ),
-        body: Body(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
+        body: Center(
+    child: _pages.elementAt(_currentIndex))//Body(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
       ),
     );
   }
@@ -171,13 +182,15 @@ class _BodyState extends State<Body> {
                             Color(0xfff5af19),
                             Colors.black,
                             "lib/assets/images/marma2.png",
-                            "Marmaray"),
+                            "Marmaray",komiteler_page()
+                           ),
                         fast_button(
                             Color(0xffF00000),
                             Color(0xffbe1238),
                             Colors.white,
                             "lib/assets/images/bus2b.png",
-                            "Otobüs")
+                            "Otobüs",
+                            bus_page())
                       ],
                     ),
                     Row(
@@ -188,13 +201,13 @@ class _BodyState extends State<Body> {
                             Color(0xffbe1238),
                             Colors.white,
                             widget.ieee_icon,
-                            "IEEE GTÜ"),
+                            "IEEE GTÜ",ieee_gtu_page()),
                         fast_button(
                             Color(0xfff12711),
                             Color(0xfff5af19),
                             Colors.black,
                             "lib/assets/images/yemekhane4.png",
-                            "Yemekhane"),
+                            "Yemekhane",komiteler_page()),
                       ],
                     )
                   ]),
@@ -205,7 +218,3 @@ class _BodyState extends State<Body> {
     ]);
   }
 }
-
-//lib/assets/images/marma2b.png
-//lib/assets/images/bus2.png
-//lib/assets/images/yemekhane4b.png

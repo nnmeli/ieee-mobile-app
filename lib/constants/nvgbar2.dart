@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ieee_mobile_app/main.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+import 'package:ieee_mobile_app/screens/gtu_page.dart';
+import 'package:ieee_mobile_app/screens/ieee_gtu_page.dart';
+import 'package:ieee_mobile_app/screens/profile_page.dart';
+
 
 class BottomNavBar extends StatefulWidget {
   final int currentIndex;
@@ -13,6 +18,10 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+
+
+
+
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
@@ -26,7 +35,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Container(height: height/12,decoration: BoxDecoration(border: Border(top: BorderSide(color: Colors.black26,width: height/200)) , color: Color(0xff00609c),),
       child: SalomonBottomBar(
         currentIndex: widget.currentIndex,
-        onTap: widget.onTap,
+        onTap: widget.onTap ,
+
         items: [
           /// Home
           SalomonBottomBarItem(
@@ -59,5 +69,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
       ),
     );
   }
+}
+
+
+void navigator(BuildContext context, Widget page) {
+  Navigator.push(context, MaterialPageRoute(builder: (context) => page));
 }
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ieee_mobile_app/screens/gtu_page.dart';
+import 'package:ieee_mobile_app/main.dart';
 
-class menu_button extends StatelessWidget {
+class menu_button extends StatefulWidget {
   Color renk1;
   Color renk2;
   Color baslik_renk;
@@ -8,17 +10,26 @@ class menu_button extends StatelessWidget {
   String baslik;
 
 
-  menu_button(this.renk1, this.renk2, this.baslik_renk, this.image_adresi,
-      this.baslik);
 
+
+
+  menu_button(this.renk1, this.renk2, this.baslik_renk, this.image_adresi,
+      this.baslik );
+
+  @override
+  State<menu_button> createState() => _menu_buttonState();
+}
+
+class _menu_buttonState extends State<menu_button> {
   @override
   Widget build(BuildContext context) {
     //var boy= ( MediaQuery.of(context).size.height * 0.18);
-   // var ic_boy = ( MediaQuery.of(context).size.height * 0.11);
+    // var ic_boy = ( MediaQuery.of(context).size.height * 0.11);
     var width = ( MediaQuery.of(context).size.width);
+    var height = ( MediaQuery.of(context).size.height);
     return Padding(
       padding: EdgeInsets.all(10),
-      child: InkWell(onTap: (){print("tıklandı");},
+      child: InkWell(onTap: (){},
         child: Container(
           decoration: BoxDecoration(
             boxShadow: [
@@ -29,7 +40,7 @@ class menu_button extends StatelessWidget {
               )
             ],
             gradient: LinearGradient(
-              colors: [renk1,renk2],
+              colors: [widget.renk1,widget.renk2],
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
             ),
@@ -38,15 +49,15 @@ class menu_button extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Expanded(flex: 3,
+              Expanded(flex: 2,
                 child: SizedBox(
-                    width: width/6,
-                    height: width/6,
-                    child: Image.asset(image_adresi)),
+                    width: width/7.5,
+                    height: height/5,
+                    child: Image.asset(widget.image_adresi)),
               ),
-              Expanded(flex: 1 ,child: Text(baslik,style: TextStyle(
-                  color: baslik_renk,
-                  //fontSize: width*0.03,
+              Expanded(flex: 1 ,child: Text(widget.baslik,style: TextStyle(
+                  color: widget.baslik_renk,
+                  fontSize: height/50,
                   fontWeight: FontWeight.bold)
               ),)
             ],

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
+
 class fast_button extends StatelessWidget {
   Color renk1;
   Color renk2;
   Color baslik_renk;
   String image_adresi;
   String baslik;
+  var page_name ;
 
 
   fast_button(this.renk1, this.renk2, this.baslik_renk, this.image_adresi,
-      this.baslik);
+      this.baslik , this.page_name );
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,15 @@ class fast_button extends StatelessWidget {
       child: SizedBox(
         width:boy,
         height: boy,
-        child: InkWell(onTap: (){print("tıklandı");},
+        child: InkWell(onTap: (
+            )
+            {Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => page_name,
+          ),
+        );
+        },
           child: Container(
             decoration: BoxDecoration(
               boxShadow: [

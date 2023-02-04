@@ -45,19 +45,26 @@ class app_bar extends StatelessWidget {
 }
 
 class side_menu extends StatelessWidget {
-  const side_menu({
+   side_menu({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        child: ListView(children: [
-          ListTile(
-
-            title: Text("IEEE GTÜ Mobile App" , style: TextStyle(fontSize: 20 ,fontWeight: FontWeight.bold)),
-            onTap: () {},
-          )
-        ]));
+      child: ListView.builder(
+        itemCount: drawerItems.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(drawerItems[index]),
+            onTap: () {
+              // Perform action for item at index
+            },
+          );
+        },
+      ),
+    );
   }
 }
+
+  var drawerItems=["BTG","Komitelerimiz", "Etkinlikler", "Yoklama", "Sosyal Medya", "Yemekhane", "Ekspress", "Otobüs", "Okul Duyuruları", "Akademik Takvim", "Akademisyenler","Ayarlar", "Uygulama Hakkında", "Öneri/Şikayet"];
