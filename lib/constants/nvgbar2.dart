@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ieee_mobile_app/main.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
-import 'package:ieee_mobile_app/screens/gtu_page.dart';
-import 'package:ieee_mobile_app/screens/ieee_gtu_page.dart';
+
 import 'package:ieee_mobile_app/screens/profile_page.dart';
 
 

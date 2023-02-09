@@ -31,6 +31,7 @@ environment:
 dependencies:
   salomon_bottom_bar: ^3.3.1
   animated_text_kit: ^4.2.2
+
   flutter:
     sdk: flutter
 
@@ -41,8 +42,16 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.11.0
   flutter_test:
     sdk: flutter
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: lib/assets/images/app_icon.png
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
