@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ieee_mobile_app/gtu_screens/marmaray_page.dart';
 import 'package:ieee_mobile_app/screens/ana_sayfa.dart';
 import 'package:ieee_mobile_app/screens/profile_page.dart';
 import 'package:ieee_mobile_app/screens/gtu_menu.dart';
 import 'constants/app_bar.dart';
-import 'constants/nvg_bar.dart';
-import 'constants/buttons_fast.dart';
+import 'constants/nvg_bar.dart'; // yedek animasyonsuz navbar
 import 'constants/nvgbar2.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:ieee_mobile_app/screens/ieee_gtu_menu.dart';
-import 'package:ieee_mobile_app/gtu_screens/bus_menu.dart';
-import 'package:ieee_mobile_app/ieee_gtu_screens/komiteler_menu.dart';
+
+
 
 void main() {
   runApp(const main_page());
