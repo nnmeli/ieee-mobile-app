@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants/buttons_fast.dart';
 import 'package:ieee_mobile_app/screens/profile_page.dart';
-
 import '../constants/menu_button.dart';
 
 class komiteler_menu extends StatefulWidget {
@@ -18,7 +16,7 @@ class _komiteler_menuState extends State<komiteler_menu> {
 
   var defaultIndex = 0;
 
-  var pages = [null, profile_page(), profile_page(), profile_page()];
+  var pages = [null, profile_page(), profile_page(), profile_page(),profile_page(),profile_page(),profile_page(),profile_page(),profile_page()];
 
   Widget build(BuildContext context) {
     if (defaultIndex == 0) {
@@ -104,6 +102,13 @@ var rota = [
   2,
   2,
   2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2,
+  2
 ];
 var colours = [
   Color(0xfff59c1a),

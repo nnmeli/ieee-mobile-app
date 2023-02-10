@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ieee_mobile_app/screens/profile_page.dart';
 import 'package:ieee_mobile_app/constants/menu_button.dart';
 import 'package:ieee_mobile_app/gtu_screens/akademik_kadro.dart';
 import 'package:ieee_mobile_app/gtu_screens/akademik_takvim.dart';

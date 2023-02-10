@@ -7,11 +7,11 @@ class fast_button extends StatelessWidget {
   Color baslik_renk;
   String image_adresi;
   String baslik;
-  var page_name ;
+
 
 
   fast_button(this.renk1, this.renk2, this.baslik_renk, this.image_adresi,
-      this.baslik , this.page_name );
+      this.baslik  );
 
   @override
   Widget build(BuildContext context) {
@@ -22,45 +22,35 @@ class fast_button extends StatelessWidget {
       child: SizedBox(
         width:boy,
         height: boy,
-        child: InkWell(onTap: (
-            )
-            {Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => page_name,
+        child: Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black54,
+                  offset: Offset(0,2),
+                  blurRadius: 6.0
+              )
+            ],
+            gradient: LinearGradient(
+              colors: [renk1,renk2],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(45),//boy*0.28
           ),
-        );
-        },
-          child: Container(
-            decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.black54,
-                    offset: Offset(0,2),
-                    blurRadius: 6.0
-                )
-              ],
-              gradient: LinearGradient(
-                colors: [renk1,renk2],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(45),//boy*0.28
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                    width: ic_boy,
-                    height: ic_boy,
-                    child: Image.asset(image_adresi)),
-                Text(baslik,style: TextStyle(
-                    color: baslik_renk,
-                    fontSize: boy*0.14,
-                    fontWeight: FontWeight.bold
-                ),)
-              ],
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(
+                  width: ic_boy,
+                  height: ic_boy,
+                  child: Image.asset(image_adresi)),
+              Text(baslik,style: TextStyle(
+                  color: baslik_renk,
+                  fontSize: boy*0.14,
+                  fontWeight: FontWeight.bold
+              ),)
+            ],
           ),
         ),
       ),
