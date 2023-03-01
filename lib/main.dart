@@ -6,10 +6,12 @@ import 'constants/app_bar.dart';
 import 'constants/nvg_bar.dart'; // yedek animasyonsuz navbar
 import 'constants/nvgbar2.dart';
 import 'package:ieee_mobile_app/screens/ieee_gtu_menu.dart';
-
+import 'package:flutter/services.dart';
 
 
 void main() {
+
+
   runApp(const main_page());
 }
 
