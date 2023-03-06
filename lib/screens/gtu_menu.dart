@@ -8,7 +8,8 @@ import 'package:ieee_mobile_app/gtu_screens/haberler.dart';
 import 'package:ieee_mobile_app/gtu_screens/harita.dart';
 import 'package:ieee_mobile_app/gtu_screens/marmaray_page.dart';
 import 'package:ieee_mobile_app/gtu_screens/yemekhane.dart';
-
+import "package:provider/provider.dart";
+import 'package:ieee_mobile_app/constants/stateData.dart';
 
 
 class gtu_menu extends StatefulWidget {
@@ -22,10 +23,10 @@ class gtu_menu extends StatefulWidget {
 
 class _gtu_menuState extends State<gtu_menu> {
   @override
-  var defaultIndex = 0;
+
   var pages = [null, duyurular(), yemekhane(), bus_menu(),marmaray_page(),akademik_takvim(),akademik_kadro(),haberler(),harita()];
   Widget build(BuildContext context) {
-
+    var defaultIndex = Provider.of<StateData>(context, listen: false).gtuIndex;
     if (defaultIndex == 0) {
       return GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -38,7 +39,8 @@ class _gtu_menuState extends State<gtu_menu> {
             child: InkWell(
                 onTap: () {
                   setState(() {
-                    defaultIndex = rota[index];
+                    Provider.of<StateData>(context, listen: false).newIndexGtu(rota[index]);
+                    // defaultIndex = rota[index];
                   });
                 },
                 child: menu_button(
@@ -55,7 +57,7 @@ class _gtu_menuState extends State<gtu_menu> {
       return WillPopScope(
         onWillPop: () async {
           setState(() {
-            defaultIndex = 0;
+            Provider.of<StateData>(context, listen: false).newIndexGtu(0);
           });
           return false;
         },
