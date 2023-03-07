@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "474858652389",
+    "project_id": "gtu-mobile-database",
+    "storage_bucket": "gtu-mobile-database.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474858652389:android:018dea606311282c6b0a0c",
+        "android_client_info": {
+          "package_name": "com.example.gtu_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474858652389-3op76vljekres3n558rghrvdmt603k8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAUiu5mAN-mMEnui2zMEGYjAn0i17ME6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474858652389-3op76vljekres3n558rghrvdmt603k8c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "474858652389-5i9pnutaq0lp0qapp9v9c8n1trvbidq6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gtuApp"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474858652389:android:0fbd10ba294e531d6b0a0c",
+        "android_client_info": {
+          "package_name": "com.example.mobile_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "474858652389-3op76vljekres3n558rghrvdmt603k8c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAUiu5mAN-mMEnui2zMEGYjAn0i17ME6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "474858652389-3op76vljekres3n558rghrvdmt603k8c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "474858652389-5i9pnutaq0lp0qapp9v9c8n1trvbidq6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.gtuApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-
 class fast_button extends StatelessWidget {
   Color renk1;
   Color renk2;
   Color baslik_renk;
   String image_adresi;
   String baslik;
-
-
 
   fast_button(this.renk1, this.renk2, this.baslik_renk, this.image_adresi,
       this.baslik  );

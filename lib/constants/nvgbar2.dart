@@ -70,8 +70,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
   }
 }
 
-
-void navigator(BuildContext context, Widget page) {
-  Navigator.push(context, MaterialPageRoute(builder: (context) => page));
-}
+//
+// void navigator(BuildContext context, Widget page) {
+//   Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+// }
 

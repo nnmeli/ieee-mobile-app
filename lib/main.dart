@@ -6,11 +6,15 @@ import 'constants/app_bar.dart';
 import 'constants/nvg_bar.dart'; // yedek animasyonsuz navbar
 import 'constants/nvgbar2.dart';
 import 'package:ieee_mobile_app/screens/ieee_gtu_menu.dart';
-
+import 'package:flutter/services.dart';
+import 'package:ieee_mobile_app/constants/stateData.dart';
+import 'package:provider/provider.dart';
 
 
 void main() {
-  runApp(const main_page());
+
+
+  runApp(ChangeNotifierProvider(create: (BuildContext context) => StateData(),child: const main_page()));
 }
 
 class main_page extends StatelessWidget {
@@ -39,11 +43,14 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-var _currentIndex = 0;
+
 
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+
+    var _currentIndex = Provider.of<StateData>(context).mainIndex;
+
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     var sol_bosluk = width * 0.05;
@@ -70,7 +77,8 @@ class _HomeState extends State<Home> {
             currentIndex: _currentIndex,
             onTap: (i) => setState(
               () {
-                _currentIndex = i;
+                Provider.of<StateData>(context, listen: false).newIndexMain(i);
+                // _currentIndex = i;
               },
             ), //SizedBox(
           ),
