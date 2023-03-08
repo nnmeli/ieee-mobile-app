@@ -1,42 +1,69 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class User{
-  late int _id;
-  late String _name;
-  late String _surname;
-  late String _mail;
-  late String _telNum;
-  late String _sClass;
-  late String _department;
-  late String _committee;
-  late String _school;
+  final String id;
+  final String name;
+  final String surname;
+  final String mail;
+  final String telNum;
+  final String sClass;
+  final String department;
+  final String committee;
+  final String school;
+  final String password;
+
+
   late int _getAuth;
-  static bool isLogin = false;
 
+  User({
+    this.id='',
+    required this.name,
+    required this.surname,
+    required this.mail,
+    required this.telNum,
+    required this.sClass,
+    required this.department,
+    required this.committee,
+    required this.school,
+    required this.password,
+});
 
-  User(this._name, this._surname, this._mail, this._telNum, this._sClass,
-      this._department, this._committee, this._school);
+//  User(this._id,this._name, this._surname, this._mail, this._telNum, this._sClass,
+  //    this._department, this._committee, this._school, this._password);
 
-  static void register(){
+  Map<String, dynamic> toJson() => {
+    'id':id,
+    'name':name,
+    'surname':surname,
+    'password':password,
+    'mail':mail,
+    'telephone':telNum,
+    'sClass':sClass,
+    'department':department,
+    'committee':committee,
+    'school':school,
+  };
 
+  static User fromJson(Map<String, dynamic> json) => User(
+    id: json['id'],
+    name: json['name'],
+    surname: json['surname'],
+    mail: json['mail'],
+    telNum: json['telephone'],
+    sClass: json['sClass'],
+    department: json['department'],
+    committee: json['committee'],
+    school: json['school'],
+    password: json['password'],
+  );
+/*
+  String get password => _password;
+
+  set password(String value) {
+    _password = value;
   }
-
-  static void login(mail, password){
-    if (true){
-      isLogin = true;
-    }else{
-      isLogin = false;
-    }
-  }
-
-  static void logout(){
-    isLogin = false;
-  }
-
-  static bool isLog(){
-    return isLogin;
-  }
-
-  int get id => _id;
-  set id(int value) {
+  String get id => _id;
+  set String(int value) {
     _id = value;
   }
 
@@ -84,5 +111,5 @@ class User{
   set getAuth(int value) {
     _getAuth = value;
   }
-
+*/
 }

@@ -10,9 +10,13 @@ import 'package:flutter/services.dart';
 import 'package:ieee_mobile_app/constants/stateData.dart';
 import 'package:provider/provider.dart';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'package:ieee_mobile_app/ieee_gtu_screens/register.dart';
+import 'package:ieee_mobile_app/ieee_gtu_screens/login.dart';
 
-void main() {
-
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
   runApp(ChangeNotifierProvider(create: (BuildContext context) => StateData(),child: const main_page()));
 }
@@ -59,8 +63,10 @@ class _HomeState extends State<Home> {
 
 
     var _pages = [
-      ana_sayfa(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
-      gtu_menu(),
+      register(),
+      login(),
+      //ana_sayfa(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
+      //gtu_menu(),
       ieee_gtu_menu(),
       profile_page()
     ];
