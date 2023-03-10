@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ieee_mobile_app/service/mail_verify.dart';
 import 'package:ieee_mobile_app/screens/ana_sayfa.dart';
 import 'package:ieee_mobile_app/screens/profile_page.dart';
 import 'package:ieee_mobile_app/screens/gtu_menu.dart';
+import 'Firebase/firebase_options.dart';
 import 'constants/app_bar.dart';
 import 'constants/nvg_bar.dart'; // yedek animasyonsuz navbar
 import 'constants/nvgbar2.dart';
@@ -9,16 +11,16 @@ import 'package:ieee_mobile_app/screens/ieee_gtu_menu.dart';
 import 'package:flutter/services.dart';
 import 'package:ieee_mobile_app/constants/stateData.dart';
 import 'package:provider/provider.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:ieee_mobile_app/ieee_gtu_screens/register.dart';
 import 'package:ieee_mobile_app/ieee_gtu_screens/login.dart';
 
-Future main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-
-  runApp(ChangeNotifierProvider(create: (BuildContext context) => StateData(),child: const main_page()));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(main_page());
 }
 
 class main_page extends StatelessWidget {
@@ -27,13 +29,27 @@ class main_page extends StatelessWidget {
 //double width = MediaQuery.of(context).size.width;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        fontFamily: "TitilliumWeb",
+
+    return MultiProvider(
+
+      providers: [
+        ChangeNotifierProvider(create: (_) => StateData())
+      ],
+
+      child: MaterialApp(
+
+        routes: {
+          "/verifyPage"   :(context) => mailVerifyService(),
+          "/registerPage" :(context) => register(),
+          "/homePage"     :(context) => Home()
+         },
+
+        theme: ThemeData(
+          fontFamily: "TitilliumWeb",
+        ),
+        debugShowCheckedModeBanner: false,
+        home: Home(),
       ),
-      debugShowCheckedModeBanner: false,
-      home:
-          Home(),
     );
   }
 }

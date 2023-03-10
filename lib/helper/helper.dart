@@ -1,16 +1,21 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+
+
 import 'package:ieee_mobile_app/helper/user.dart';
-import 'package:ieee_mobile_app/main.dart';
+import 'package:ieee_mobile_app/service/firebaseService.dart';
 
 class Helper{
 
   static bool isLogin = false;
 
   static Future<void> register(name, surname, mail, telNum, sClass, department, committee, school, password) async {
-    final docUser = FirebaseFirestore.instance.collection('users').doc();
 
-    final user = User(
-        id: docUser.id,
+    final docUser = firebaseService().setCollection('user');
+
+
+
+
+     final registerUser = user(
+        id: docUser!.id,
         name: name,
         surname: surname,
         mail: mail,
@@ -20,13 +25,25 @@ class Helper{
         committee: committee,
         school: school,
         password: password);
-    final json = user.toJson();
+     print(registerUser.toJson());
 
-    await docUser.set(json);
+    final json = registerUser.toJson();
+
+  //navigate to verify page and get register
+    await firebaseService().setData(docUser, json);
+    await firebaseService().createUser(mail, password);
+
+
+
   }
 
   static Future<void> login(mail, password) async {
 
+    firebaseService().loginUser(mail, password);
+
+
+
+    /*
     await FirebaseFirestore.instance
     .collection('users')
     .get()
@@ -45,6 +62,9 @@ class Helper{
     else{
       print("wrong password");
     }
+
+     */
+
   }
 
   static void logout(){
@@ -55,4 +75,6 @@ class Helper{
     return isLogin;
   }
 
+
 }
+

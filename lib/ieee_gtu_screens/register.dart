@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ieee_mobile_app/helper/user.dart';
 import 'package:ieee_mobile_app/helper/helper.dart';
-import 'package:ieee_mobile_app/screens/profile_page.dart';
 
 
 void main() {
@@ -33,8 +31,12 @@ class _registerState extends State<register> {
         TextField(
           controller: surnameController,
         ),
-        ElevatedButton(onPressed: (){
-          Helper.register(nameController.text, surnameController.text,"mail","+905459739699","2","PM","CSE","GTU","12345");
+        ElevatedButton(onPressed: () async{
+          await Helper.register(nameController.text, surnameController.text,"cemilfatihyol@gmail.com","+905459739699","2","PM","CSE","GTU","1234567");
+
+          //hesabı aktive etmek için link ile doğrulama sayfası
+          Navigator.pushReplacementNamed(context, "/verifyPage");
+
           }, child: Text('Register'))
       ],
 
