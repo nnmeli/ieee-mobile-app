@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ieee_mobile_app/constants/menu_button.dart';
 import 'package:provider/provider.dart';
 import 'package:ieee_mobile_app/constants/stateData.dart';
+import 'package:ieee_mobile_app/profile_screens/loginPage.dart';
+import 'package:ieee_mobile_app/profile_screens/signupPage.dart';
+
 
 class notLogin extends StatefulWidget {
   const notLogin({Key? key}) : super(key: key);
@@ -39,9 +42,15 @@ class _notLoginState extends State<notLogin> {
                 backgroundColor: Colors.blue
 
               ),
-              onPressed: () {setState(() {
-                Provider.of<StateData>(context, listen: false).newIndexProfile(1);
-              });
+              onPressed: () {
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+                //   setState(() {
+              //   Provider.of<StateData>(context, listen: false).newIndexProfile(1);
+              // });
 
               },
               child: Text("Giriş Yap" ,style:TextStyle(color: Colors.white) ),
@@ -49,9 +58,15 @@ class _notLoginState extends State<notLogin> {
             SizedBox(height: 8.0),
             OutlinedButton(
               style: ButtonStyle(),
-              onPressed: () { setState(() {
-                Provider.of<StateData>(context, listen: false).newIndexProfile(2);
-              });
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SignupPage()),
+                );
+
+              //   setState(() {
+              //   Provider.of<StateData>(context, listen: false).newIndexProfile(2);
+              // });
 
               },
               child: Text("Kayıt Ol" ,style:TextStyle(color: Colors.black) ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:ieee_mobile_app/gtu_screens/yemekhane/fortry.dart';
 
 
 void main() {
@@ -17,6 +17,6 @@ class _yemekhaneState extends State<yemekhane> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child :Text("yemekhane"));
+    return Center(child : GununMenusu());
   }
 }

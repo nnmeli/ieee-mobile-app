@@ -25,8 +25,8 @@ class _profile_pageState extends State<profile_page> {
 
     var _pages = [
       notLogin(),
-      LoginPage(),
-      SignupPage(),
+      //LoginPage(),
+      //SignupPage(),
       loginTrue(height, width),
     ];
 

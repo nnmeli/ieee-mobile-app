@@ -9,8 +9,14 @@ import 'package:ieee_mobile_app/screens/ieee_gtu_menu.dart';
 import 'package:flutter/services.dart';
 import 'package:ieee_mobile_app/constants/stateData.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:ieee_mobile_app/ieee_gtu_screens/register.dart';
+import 'package:ieee_mobile_app/ieee_gtu_screens/login.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
   runApp(ChangeNotifierProvider(
       create: (BuildContext context) => StateData(), child: const main_page()));
 }

@@ -7,7 +7,7 @@ import 'package:ieee_mobile_app/gtu_screens/duyurular.dart';
 import 'package:ieee_mobile_app/gtu_screens/haberler.dart';
 import 'package:ieee_mobile_app/gtu_screens/harita.dart';
 import 'package:ieee_mobile_app/gtu_screens/marmaray_page.dart';
-import 'package:ieee_mobile_app/gtu_screens/yemekhane.dart';
+import 'package:ieee_mobile_app/gtu_screens/yemekhane/yemekhane.dart';
 import "package:provider/provider.dart";
 import 'package:ieee_mobile_app/constants/stateData.dart';
 
