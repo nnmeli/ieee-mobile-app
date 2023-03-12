@@ -16,7 +16,7 @@ import 'package:ieee_mobile_app/ieee_gtu_screens/login.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
+      options: DefaultFirebaseOptions.currentPlatform,);
   runApp(ChangeNotifierProvider(
       create: (BuildContext context) => StateData(), child: const main_page()));
 }
