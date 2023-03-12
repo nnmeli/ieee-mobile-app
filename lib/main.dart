@@ -10,11 +10,9 @@ import 'package:flutter/services.dart';
 import 'package:ieee_mobile_app/constants/stateData.dart';
 import 'package:provider/provider.dart';
 
-
 void main() {
-
-
-  runApp(ChangeNotifierProvider(create: (BuildContext context) => StateData(),child: const main_page()));
+  runApp(ChangeNotifierProvider(
+      create: (BuildContext context) => StateData(), child: const main_page()));
 }
 
 class main_page extends StatelessWidget {
@@ -28,8 +26,7 @@ class main_page extends StatelessWidget {
         fontFamily: "TitilliumWeb",
       ),
       debugShowCheckedModeBanner: false,
-      home:
-          Home(),
+      home: Home(),
     );
   }
 }
@@ -43,12 +40,9 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-
-
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-
     var _currentIndex = Provider.of<StateData>(context).mainIndex;
 
     var height = MediaQuery.of(context).size.height;
@@ -56,7 +50,6 @@ class _HomeState extends State<Home> {
     var sol_bosluk = width * 0.05;
     final ieee_icon = "lib/assets/images/ieee_icon.png";
     final gtu_icon = "lib/assets/images/gtü_icon.png";
-
 
     var _pages = [
       ana_sayfa(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
@@ -67,22 +60,25 @@ class _HomeState extends State<Home> {
 
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Colors.white,
-          drawer: side_menu(),
-          appBar: PreferredSize(
-            preferredSize: Size.fromHeight(height / 12),
-            child: app_bar(),
-          ),
-          bottomNavigationBar: BottomNavBar(
-            currentIndex: _currentIndex,
-            onTap: (i) => setState(
-              () {
-                Provider.of<StateData>(context, listen: false).newIndexMain(i);
-                // _currentIndex = i;
-              },
-            ), //SizedBox(
-          ),
-          body: Center(child: _pages.elementAt(_currentIndex))),
+        backgroundColor: Colors.white,
+        drawer: side_menu(),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(height / 12),
+          child: app_bar(),
+        ),
+        bottomNavigationBar: BottomNavBar(
+          currentIndex: _currentIndex,
+          onTap: (i) => setState(
+            () {
+              Provider.of<StateData>(context, listen: false).newIndexMain(i);
+              // _currentIndex = i;
+            },
+          ), //SizedBox(
+        ),
+        body: Center(
+          child: _pages.elementAt(_currentIndex),
+        ),
+      ),
     );
   }
 }
