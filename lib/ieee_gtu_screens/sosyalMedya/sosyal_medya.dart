@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ieee_mobile_app/ieee_gtu_screens/sosyalMedya/icerik.dart';
+
 
 
 
@@ -17,6 +19,6 @@ class _sosyal_medyaState extends State<sosyal_medya> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child :Text("sosyalmedya"));
+    return imagesScreen();
   }
 }
