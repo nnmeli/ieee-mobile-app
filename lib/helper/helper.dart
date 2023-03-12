@@ -1,15 +1,15 @@
 
 
 import 'package:ieee_mobile_app/helper/user.dart';
-import 'package:ieee_mobile_app/service/firebaseService.dart';
+import 'package:ieee_mobile_app/mixin/firebaseService.dart';
 
-class Helper{
+class Helper with firebaseMixin{
 
   static bool isLogin = false;
 
   static Future<void> register(name, surname, mail, telNum, sClass, department, committee, school, password) async {
 
-    final docUser = firebaseService().setCollection('user');
+    final docUser = Helper().setCollection('user');
 
 
 
@@ -30,8 +30,8 @@ class Helper{
     final json = registerUser.toJson();
 
   //navigate to verify page and get register
-    await firebaseService().setData(docUser, json);
-    await firebaseService().createUser(mail, password);
+    await Helper().setData(docUser, json);
+    await Helper().createUser(mail, password);
 
 
 
@@ -39,7 +39,8 @@ class Helper{
 
   static Future<void> login(mail, password) async {
 
-    firebaseService().loginUser(mail, password);
+    Helper().loginUser(mail, password);
+    isLogin = true;
 
 
 

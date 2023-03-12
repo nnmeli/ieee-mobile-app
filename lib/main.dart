@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ieee_mobile_app/service/mail_verify.dart';
+import 'package:ieee_mobile_app/logic/isLoading.dart';
+import 'package:ieee_mobile_app/logic/mail_verify.dart';
 import 'package:ieee_mobile_app/screens/ana_sayfa.dart';
 import 'package:ieee_mobile_app/screens/profile_page.dart';
 import 'package:ieee_mobile_app/screens/gtu_menu.dart';
@@ -33,7 +34,8 @@ class main_page extends StatelessWidget {
     return MultiProvider(
 
       providers: [
-        ChangeNotifierProvider(create: (_) => StateData())
+        ChangeNotifierProvider(create: (_) => StateData()),
+        ChangeNotifierProvider(create: (_) => loading())
       ],
 
       child: MaterialApp(

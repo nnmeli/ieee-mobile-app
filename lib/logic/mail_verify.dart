@@ -1,12 +1,10 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:ieee_mobile_app/service/firebaseService.dart';
+import 'package:ieee_mobile_app/mixin/firebaseService.dart';
 
-class mailVerifyService extends StatefulWidget {
-  const mailVerifyService({Key? key}) : super(key: key);
+class mailVerifyService extends StatefulWidget with firebaseMixin {
+   mailVerifyService({Key? key}) : super(key: key);
 
   @override
   State<mailVerifyService> createState() => _mailVerifyServiceState();
@@ -15,7 +13,7 @@ class mailVerifyService extends StatefulWidget {
 class _mailVerifyServiceState extends State<mailVerifyService> {
 
   // firebase service
-  final _auth = firebaseService().fire_auth;
+  final _auth = mailVerifyService().fire_auth;
 
   late Timer timer;
   late User? user;
@@ -28,7 +26,7 @@ class _mailVerifyServiceState extends State<mailVerifyService> {
     user!.sendEmailVerification();
 
     timer = Timer.periodic( Duration(seconds: 3), (timer) async {
-      firebaseService().checkEmailVerified(timer , context);
+      mailVerifyService().checkEmailVerified(timer , context);
     });
 
 
@@ -41,8 +39,6 @@ class _mailVerifyServiceState extends State<mailVerifyService> {
     timer?.cancel();
     super.dispose();
   }
-
-
 
 
   @override
