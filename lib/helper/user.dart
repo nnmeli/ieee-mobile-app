@@ -8,7 +8,6 @@ class user{
   final String sClass;
   final String department;
   final String committee;
-  final String school;
   final String password;
 
 
@@ -23,7 +22,6 @@ class user{
     required this.sClass,
     required this.department,
     required this.committee,
-    required this.school,
     required this.password,
 });
 
@@ -40,7 +38,6 @@ class user{
     'sClass':sClass,
     'department':department,
     'committee':committee,
-    'school':school,
   };
 
   static user fromJson(Map<String, dynamic> json) => user(
@@ -52,7 +49,6 @@ class user{
     sClass: json['sClass'],
     department: json['department'],
     committee: json['committee'],
-    school: json['school'],
     password: json['password'],
   );
 /*

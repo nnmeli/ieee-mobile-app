@@ -1,13 +1,16 @@
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:ieee_mobile_app/helper/user.dart';
 import 'package:ieee_mobile_app/mixin/firebaseService.dart';
+import 'package:provider/provider.dart';
 
-class Helper with firebaseMixin{
+class Helper with firebaseMixin, ChangeNotifier{
 
   static bool isLogin = false;
+  static bool isVerified = false;
 
-  static Future<void> register(name, surname, mail, telNum, sClass, department, committee, school, password) async {
+  static Future<void> register(name, surname, mail, telNum, sClass, department, committee, password) async {
 
     final docUser = Helper().setCollection('user');
 
@@ -23,7 +26,6 @@ class Helper with firebaseMixin{
         sClass: sClass,
         department: department,
         committee: committee,
-        school: school,
         password: password);
      print(registerUser.toJson());
 

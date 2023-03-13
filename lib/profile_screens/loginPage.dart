@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ieee_mobile_app/helper/helper.dart';
+import 'package:ieee_mobile_app/mixin/firebaseService.dart';
 
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+   const LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -11,6 +13,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   //
   final _loginFormKey = GlobalKey<FormState>();
+
+  late String mail;
+  late String psw;
 
 
 
@@ -38,6 +43,10 @@ class _LoginPageState extends State<LoginPage> {
                         CustomInputField(
                             labelText: 'Email',
                             hintText: 'Email giriniz',
+                            onSaved: (textValue){
+
+                              mail = textValue!;
+                            },
                             validator: (textValue) {
                               if(textValue == null || textValue.isEmpty) {
                                 return 'Email is required!';
@@ -52,6 +61,10 @@ class _LoginPageState extends State<LoginPage> {
                           hintText: 'Şifre Giriniz',
                           obscureText: true,
                           suffixIcon: true,
+                          onSaved: (textValue){
+
+                            psw = textValue!;
+                          },
                           validator: (textValue) {
                             if(textValue == null || textValue.isEmpty) {
                               return 'Password is required!';
@@ -108,12 +121,17 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  void _handleLoginUser() {
+  Future<void> _handleLoginUser() async{
     // login user
     if (_loginFormKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Submitting data..')),
       );
+
+      
+      _loginFormKey.currentState!.save();
+      Helper.login(mail, psw);
+
     }
   }
 }
@@ -123,6 +141,7 @@ class CustomInputField extends StatefulWidget {
   final String labelText;
   final String hintText;
   final String? Function(String?) validator;
+  final String? Function(String?) onSaved;
   final bool suffixIcon;
   final bool? isDense;
   final bool obscureText;
@@ -132,6 +151,7 @@ class CustomInputField extends StatefulWidget {
     required this.labelText,
     required this.hintText,
     required this.validator,
+    required this.onSaved,
     this.suffixIcon = false,
     this.isDense,
     this.obscureText = false
@@ -179,6 +199,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
             ),
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: widget.validator,
+            onSaved: widget.onSaved,
           ),
         ],
       ),

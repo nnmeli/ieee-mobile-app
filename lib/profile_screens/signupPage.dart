@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../helper/helper.dart';
+
 class SignupPage extends StatefulWidget {
   const SignupPage({Key? key}) : super(key: key);
 
@@ -12,6 +14,13 @@ class _SignupPageState extends State<SignupPage> {
 
 
   final _signupFormKey = GlobalKey<FormState>();
+  String? name;
+  String? lName;
+  String? mail;
+  String? telNo;
+  String? department;
+  String? committee;
+  String? psw;
 
 
   @override
@@ -71,6 +80,9 @@ class _SignupPageState extends State<SignupPage> {
                           labelText: 'İsim',
                           hintText: 'İsminizi Giriniz',
                           isDense: true,
+                          onSaved: (textValue){
+                            name = textValue!;
+                          },
                           validator: (textValue) {
                             if(textValue == null || textValue.isEmpty) {
                               return 'İsim Girmek Zorunludur!';
@@ -83,6 +95,9 @@ class _SignupPageState extends State<SignupPage> {
                           labelText: 'Email',
                           hintText: 'Email Giriniz',
                           isDense: true,
+                          onSaved: (textValue){
+                            mail = textValue!;
+                          },
                           validator: (textValue) {
                             if(textValue == null || textValue.isEmpty) {
                               return 'Email Girmek Zorunludur!';
@@ -95,6 +110,9 @@ class _SignupPageState extends State<SignupPage> {
                           labelText: 'Telefon Numarası',
                           hintText: 'Telefon Numaranızı Giriniz',
                           isDense: true,
+                          onSaved: (textValue){
+                            telNo = textValue!;
+                          },
                           validator: (textValue) {
                             if(textValue == null || textValue.isEmpty) {
                               return 'Telefon Numarası Girmek Zorunludur!';
@@ -108,6 +126,9 @@ class _SignupPageState extends State<SignupPage> {
                         hintText: 'Belirlediğiniz Şifreyi Giriniz',
                         isDense: true,
                         obscureText: true,
+                        onSaved: (textValue){
+                          psw = textValue!;
+                        },
                         validator: (textValue) {
                           if(textValue == null || textValue.isEmpty) {
                             return 'Şifre Zorunludur';
@@ -121,6 +142,9 @@ class _SignupPageState extends State<SignupPage> {
                           labelText: 'Bölüm',
                           hintText: 'Bölümünüzü Giriniz',
                           isDense: true,
+                          onSaved: (textValue){
+                            department = textValue!;
+                          },
                           validator: (textValue) {
                             if(textValue == null || textValue.isEmpty) {
                               return 'Bölüm Bilgisi Girmek Zorunludur!';
@@ -133,6 +157,9 @@ class _SignupPageState extends State<SignupPage> {
                           labelText: 'Komite',
                           hintText: 'Kayıt Olduğunuz Komiteyi Giriniz',
                           isDense: true,
+                          onSaved: (textValue){
+                            committee = textValue!;
+                          },
                           validator: (textValue) {
                             if(textValue == null || textValue.isEmpty) {
                               return 'Komite Bilgisi Girmek Zorunludur!';
@@ -170,12 +197,18 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 
-  void _handleSignupUser() {
+  Future<void> _handleSignupUser() async {
     // signup user
     if (_signupFormKey.currentState!.validate()) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Submitting data..')),
       );
+
+      _signupFormKey.currentState!.save();
+
+      // !!!!soy ad ve sınıf eklenmeli
+      await Helper.register( name, " surname ", mail, telNo, " class", department, committee, psw);
+
     }
   }
 }
@@ -252,6 +285,7 @@ class CustomInputField extends StatefulWidget {
   final String labelText;
   final String hintText;
   final String? Function(String?) validator;
+  final String? Function(String?) onSaved;
   final bool suffixIcon;
   final bool? isDense;
   final bool obscureText;
@@ -261,6 +295,7 @@ class CustomInputField extends StatefulWidget {
     required this.labelText,
     required this.hintText,
     required this.validator,
+    required this.onSaved,
     this.suffixIcon = false,
     this.isDense,
     this.obscureText = false
@@ -308,6 +343,7 @@ class _CustomInputFieldState extends State<CustomInputField> {
             ),
             autovalidateMode: AutovalidateMode.onUserInteraction,
             validator: widget.validator,
+            onSaved: widget.onSaved,
           ),
         ],
       ),

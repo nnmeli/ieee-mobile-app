@@ -80,8 +80,8 @@ class _HomeState extends State<Home> {
     final gtu_icon = "lib/assets/images/gtü_icon.png";
 
     var _pages = [
-      register(),
-      login(),
+      ana_sayfa(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
+      gtu_menu(),
       //ana_sayfa(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
       //gtu_menu(),
       ieee_gtu_menu(),
