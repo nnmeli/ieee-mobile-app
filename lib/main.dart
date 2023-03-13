@@ -20,7 +20,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
 
-    options: DefaultFirebaseOptions.currentPlatform);
+      options: DefaultFirebaseOptions.currentPlatform,);
+
   runApp(ChangeNotifierProvider(
       create: (BuildContext context) => StateData(), child: const main_page()));
 
@@ -80,10 +81,9 @@ class _HomeState extends State<Home> {
     final gtu_icon = "lib/assets/images/gtü_icon.png";
 
     var _pages = [
+
       ana_sayfa(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
       gtu_menu(),
-      //ana_sayfa(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
-      //gtu_menu(),
       ieee_gtu_menu(),
       profile_page()
     ];
