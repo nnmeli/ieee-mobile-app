@@ -82,7 +82,6 @@ class _HomeState extends State<Home> {
 
     var _pages = [
 
-
       ana_sayfa(sol_bosluk: sol_bosluk, height: height, ieee_icon: ieee_icon),
       gtu_menu(),
       ieee_gtu_menu(),

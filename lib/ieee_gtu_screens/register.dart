@@ -32,7 +32,7 @@ class _registerState extends State<register> {
           controller: surnameController,
         ),
         ElevatedButton(onPressed: () async{
-          await Helper.register(nameController.text, surnameController.text,"cemilfatihyol@gmail.com","+905459739699","2","PM","CSE","GTU","1234567");
+          await Helper.register(nameController.text, surnameController.text,"cemilfatihyol@gmail.com","+905459739699","2","PM","CSE","GTU");
 
           //hesabı aktive etmek için link ile doğrulama sayfası
           Navigator.pushReplacementNamed(context, "/verifyPage");
